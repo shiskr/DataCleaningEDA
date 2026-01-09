@@ -1,7 +1,7 @@
 def dataset_overview(df):
     return {
-        "rows": df.shape[0],
-        "columns": df.shape[1],
-        "memory_mb": round(df.memory_usage(deep=True).sum() / 1024**2, 2),
-        "duplicates": df.duplicated().sum()
+        "Number of Rows": int(df.shape[0]),
+        "Number of Columns": int(df.shape[1]),
+        "Memory in MB": str(round(df.memory_usage(deep=True).sum() / 1024**2, 2)) + " MB",
+        "Duplicates": df.duplicated().sum()
     }

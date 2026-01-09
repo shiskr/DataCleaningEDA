@@ -1,9 +1,7 @@
 def missing_analysis(df):
     return (
         df.isnull()
-        .mean()
-        .mul(100)
-        .round(2)
+        .sum()
         .reset_index()
-        .rename(columns={"index": "column", 0: "missing_percent"})
+        .rename(columns={"index": "column", 0: "missing_count"})
     )
